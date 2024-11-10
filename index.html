@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Min webbplats</title>
+  <style>
+    /* stilerna */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background: #0B0F19;
+      color: #ffffff;
+    }
+
+    /* Content Padding */
+    .content-wrapper {
+      padding: 0 20px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: #0B0F19;
+    }
+
+    .auth-buttons button {
+      margin-left: 10px;
+      background-color: #663399;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    /* Section 1: introduktion */
+    .intro {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+      gap: 40px;
+    }
+
+    .intro-text {
+      font-size: 1.8rem;
+      width: 40%;
+      text-align: center;
+    }
+
+    .intro-text h1 {
+      font-size: 1.5rem; /* Smaller header size */
+    }
+
+    .intro-text p {
+      font-size: 0.9rem; /* Smaller text size */
+    }
+
+    .intro-image {
+      margin-left: 20px; /* Added margin to move image to the right */
+    }
+
+    .intro-image img {
+      width: 400px; /* Adjust size here */
+      height: auto;
+    }
+
+    .store-buttons {
+      margin-top: 15px; /* Space between text and buttons */
+    }
+
+    .store-buttons button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    /* Section 2: Partners */
+    .partners-section {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .partners-image {
+      display: flex;
+      justify-content: center; /* Center image horizontally */
+      padding-right: 20px; /* Space to balance the layout */
+    }
+
+    .partners-image img {
+      width: 70%; /* Adjust as needed */
+      height: auto;
+    }
+ /* Section 2: Partners & Features */
+  .partners-features {
+    padding: 40px 20px; /* Adjust top/bottom padding */
+    display: flex;
+    justify-content: center; /* Center the entire section */
+  }
+
+  .features-container {
+    display: flex; /* Use flexbox for layout */
+    align-items: flex-start; /* Align items to the top */
+    justify-content: center; /* Center the containers */
+    gap: 40px; /* Space between the two containers */
+    max-width: 1200px; /* Max width to avoid stretching on large screens */
+    width: 100%; /* Full width for responsiveness */
+  }
+
+  .iphone-image {
+    width: 50%; /* Adjust as necessary */
+    padding: 20px; /* Padding around the image */
+    border-radius: 10px; /* Rounded corners */
+  }
+
+  .features-content {
+    width: 50%; /* Adjust as necessary */
+    text-align: center; /* Center text in the content area */
+  }
+
+  .features {
+    display: grid; /* Use grid for layout */
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px; /* Space between the items */
+    row-gap: 20px; /* Space between rows */
+    margin-top: 20px; /* Space above the features section */
+    justify-items: center; /* Center items in the grid cells */
+}
+
+
+.feature-box {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center text inside the feature box */
+}
+
+.feature-box img {
+    width: 75px; /* Increased icon size */
+    height: auto;
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.feature-text {
+    text-align: left; /* Align text to the left for titles */
+}
+
+.feature-text h3 {
+    font-size: 1rem; /* Feature title size */
+    margin: 0; /* Remove default margin */
+}
+
+.feature-text p {
+    font-size: 0.8rem; /* Description text size */
+    margin: 0; /* Remove default margin */
+    color: #ccc; /* Optional: different color for description */
+}
+
+
+  .feature-text h3 {
+    font-size: 1rem; /* Feature title size */
+    margin: 0; /* Remove default margin */
+  }
+
+  .feature-text p {
+    font-size: 0.8rem; /* Description text size */
+    margin: 0; /* Remove default margin */
+    color: #ccc; /* Optional: different color for description */
+  }
+
+/* Section 3: Main Image & Text */
+.main-image-text {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.main-image img {
+  width: 50%;
+  height: auto;
+}
+
+.main-header {
+  margin-bottom: 20px; /* Space between header and image */
+}
+
+/* Discover More Features Section */
+.discover-more-features {
+  padding: 40px 20px; /* Padding for top and bottom */
+  display: flex;
+  flex-direction: column; /* Stack features groups vertically */
+  gap: 40px; /* Space between features groups */
+  align-items: center; /* Center align all groups horizontally */
+}
+
+/* Features Group */
+.features-group {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  width: 100%; /* Full width for alignment */
+}
+
+/* Left Text */
+.features-text-left,
+.features-text-right {
+  width: 50%; /* Set width for left and right text */
+  text-align: center; /* Center align text */
+}
+
+/* Right Image */
+.features-image-right,
+.features-image-left {
+  width: 50%; /* Set width for right and left image */
+  display: flex;
+  justify-content: center; /* Center image horizontally */
+}
+
+/* Optional: Add styles for images */
+.features-image-left img, .features-image-right img {
+  max-width: 100%; /* Responsive image width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: Add rounded corners */
+}
+.features-text-right {
+    text-align: center; /* Center the text */
+}
+
+.feature-icons-buttons {
+    display: flex; /* Use flexbox to align the icons and buttons */
+    justify-content: center; /* Center them horizontally */
+    gap: 20px; /* Add space between the icons and buttons */
+    margin-top: 20px; /* Space above the icons/buttons */
+}
+
+.feature-icon img {
+    width: 50px; /* Adjust icon size */
+    height: auto;
+}
+
+.feature-buttons button {
+    background-color: #663399;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.feature-buttons button:hover {
+    background-color: #5a2d8c;
+}
+
+
+
+
+/* Testimonials Section */
+.testimonials {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.testimonials-header {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.testimonials-subtext {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.testimonial-container {
+  display: flex;
+  justify-content: space-between; /* Ensures boxes are evenly spaced */
+  gap: 20px;
+  padding: 0 10%;
+}
+
+.testimonial-box {
+  width: 45%; /* Adjust to fit two testimonials side by side */
+  padding: 20px;
+  background-color: #1E212B;
+  border-radius: 5px;
+  text-align: left; /* Align text to the left */
+}
+
+/* FAQ & Contact Section */
+.faq-contact {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  gap: 40px;
+  padding: 40px 0;
+}
+
+/* Contact Section */
+.contact-section {
+  width: 45%; /* Adjust to make both sections evenly sized */
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.contact-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.contact-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #663399;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* FAQ Section */
+.faq-section {
+  width: 45%; /* Adjust to make both sections evenly sized */
+}
+
+.faq-header {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  text-align: center; /* Center the FAQ header */
+}
+
+.faq-item {
+  background-color: #2c2f3a;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.faq-question {
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.faq-answer {
+  margin-top: 10px;
+  color: #ccc;
+  display: none; /* Initially hide answers */
+}
+
+.faq-item.active .faq-answer {
+  display: block; /* Show answer when item is active */
+}
+
+/* Subscribe Section */
+.subscribe-section {
+  padding: 40px 20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.subscribe-header {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.subscribe-input {
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  width: 300px; /* Adjust as needed */
+  max-width: 100%;
+}
+
+.subscribe-button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  background-color: #663399;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.subscribe-button:hover {
+  background-color: #5a2d8c;
+}
+
+.subscribe-input:focus, .subscribe-button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(102, 51, 153, 0.7);
+}
+
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #0B0F19;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <div class="content-wrapper">
+
+    <!-- Header -->
+    <header>
+      <div class="logo"><img src="images/solid.svg" alt="Logo"></div>
+      <div class="auth-buttons">
+        <button>Sign Up</button>
+        <button>Login</button>
+      </div>
+    </header>
+<!-- Section 1: Introduction -->
+<section class="intro">
+  <div class="intro-text">
+    <h1>Welcome to Our App</h1>
+    <p>Welcome to Our App. Discover the features and enjoy the experience.</p>
+    <div class="store-buttons">
+      <a href="https://play.google.com" target="_blank">
+        <img src="images/googleplay.svg" alt="Get it on Google Play" style="width: 150px; height: auto;">
+      </a>
+      <a href="https://www.apple.com/app-store/" target="_blank">
+        <img src="images/appstore.svg" alt="Download on the App Store" style="width: 150px; height: auto;">
+      </a>
+    </div>
+  </div>
+  <div class="intro-image"><img src="images/image.png" alt="App Image"></div>
+</section>
+
+
+    <!-- Partners Section -->
+    <section class="partners-section">
+      <div class="partners-image"><img src="images/logos.png" alt="Partners Image"></div>
+    </section>
+
+  <!-- Section 2: Partners & Features -->
+<section class="partners-features">
+  <div class="features-container">
+    <div class="iphone-image">
+      <img src="images/iPhone12Pro.png" alt="iPhone 12 Pro Image">
+    </div>
+    <div class="features-content">
+      <div class="features-header"><h1>Our Features</h1></div>
+      <div class="features-subtext">Explore the features that make our app unique.</div>
+       <p>‎ </p>
+        <p>‎ </p>
+         <p>‎ </p>
+          <p>‎ </p>
+      <div class="features">
+        <div class="feature-box">
+          <img src="images/icon.png" alt="Feature 1">
+          <div class="feature-text">
+            <h3>Feature 1</h3>
+            <p>Description for feature 1.</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <img src="images/icon1.png" alt="Feature 2">
+          <div class="feature-text">
+            <h3>Feature 2</h3>
+            <p>Description for feature 2.</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <img src="images/icon2.png" alt="Feature 3">
+          <div class="feature-text">
+            <h3>Feature 3</h3>
+            <p>Description for feature 3.</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <img src="images/icon3.png" alt="Feature 4">
+          <div class="feature-text">
+            <h3>Feature 4</h3>
+            <p>Description for feature 4.</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <img src="images/icon4.png" alt="Feature 5">
+          <div class="feature-text">
+            <h3>Feature 5</h3>
+            <p>Description for feature 5.</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <img src="images/icon5.png" alt="Feature 6">
+          <div class="feature-text">
+            <h3>Feature 6</h3>
+            <p>Description for feature 6.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Section 3: Main Image & Text -->
+    <section class="main-image-text">
+      <h2 class="main-header"> Latest transaction history</h2>
+       <p>‎ </p>
+      <div class="main-image"><img src="images/carousel.png" alt="Main Image"></div>
+         <p></p>
+           <p>‎ </p>
+ 
+
+
+            <h2 class="main-header">Discover More Features</h2>
+ <p>Enim, et amet praesent pharetra. Mi non ante hendrerit amet sed. Arcu sociis tristique quisque hac in consectetur condimentum. </p>
+
+    </section>
+<!-- Section 4: Discover More Features -->
+<section class="discover-more-features">
+  <div class="features-group">
+    <div class="features-text-left">
+      <h3>Feature Set 1</h3>
+      <p>Description of the first set of features.</p>
+    </div>
+    <div class="features-image-right">
+      <img src="images/image1.png" alt="Features Image 1">
+    </div>
+  </div>
+
+  <div class="features-group">
+    <div class="features-image-left">
+      <img src="images/image2.png" alt="Features Image 2">
+    </div>
+<div class="features-text-right">
+    <h3>Feature Set 2</h3>
+    <p>Description of the second set of features.</p>
+
+   
+        <div class="feature-buttons">
+          
+            <button>Get Started</button>
+        </div>
+    </div>
+</div>
+
+</section>
+
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <h2 class="testimonials-header">What Our Users Say</h2>
+      <p class="testimonials-subtext">Testimonials from satisfied users.</p>
+      <div class="testimonial-container">
+        <div class="testimonial-box">
+          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+          <p>- User 1</p>
+        </div>
+        <div class="testimonial-box">
+          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+          <p>- User 2</p>
+        </div>
+      </div>
+    </section>
+<!-- FAQ & Contact Section -->
+<section class="faq-contact">
+  <!-- Contact Section -->
+  <div class="contact-section">
+    <h2>Contact Us</h2>
+    <p>Have questions? Reach out to us anytime!</p>
+    <button class="contact-button">Contact</button>
+  </div>
+
+
+
+  <!-- FAQ Section -->
+  <div class="faq-section">
+    <h2 class="faq-header">Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-question">1. What is this app about?</div>
+      <div class="faq-answer">
+        <p>This app is designed to make your life easier by providing unique features that enhance your experience.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">2. How do I get started?</div>
+      <div class="faq-answer">
+        <p>Simply download the app from the App Store or Google Play, sign up, and you're good to go!</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">3. Is my data secure?</div>
+      <div class="faq-answer">
+        <p>Yes, we take your privacy seriously and ensure that your data is securely stored and handled.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">4. How can I contact support?</div>
+      <div class="faq-answer">
+        <p>You can reach out to our support team via email or the contact form on this page.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Subscribe Section -->
+<section class="subscribe-section">
+  <h2 >Subscribe to Our Newsletter</h2>
+  <div class="subscribe-form">
+    <input type="email" id="subscribe-email" placeholder="Enter your email" class="subscribe-input" required />
+    <button class="subscribe-button">Subscribe</button>
+  </div>
+</section>
+
+<!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Min webbplats. All Rights Reserved.</p>
+    </footer>
+  </div>
+
+
+
+
+<script>
+  const faqQuestions = document.querySelectorAll('.faq-item');
+
+  faqQuestions.forEach(item => {
+    item.querySelector('.faq-question').addEventListener('click', () => {
+      item.classList.toggle('active');
+    });
+  });
+</script>
+
+
+
+</body>
+</html>
